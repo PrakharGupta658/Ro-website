@@ -14,7 +14,6 @@ import { CartProvider } from "react-use-cart";
 import { auth } from "./Firebase/Firebase";
 import ProductDetail from "./ProductDetail";
 import Product from "./Product";
-import Test from "./Test";
 import PaymentPage from "./PaymentPage";
 
 
@@ -53,7 +52,7 @@ const App = () => {
           <Route exact path="/productdetail/:id" element={<CartProvider><ProductDetail /></CartProvider>} />
           {/* by default home page is show */}
           <Route path="*" element={<Home />} />
-          <Route exact path="/pay" element={<PaymentPage/>} />
+          <Route exact path="/pay" element={<PaymentPage />} />
         </Routes>
         <Footer />
       </Router>
