@@ -1,6 +1,9 @@
 {
   "name": "ro-world",
   "version": "0.1.0",
+  "engines": {
+  "node": "24.x"
+},
   "private": true,
   "dependencies": {
     "@formspree/react": "^2.4.1",
