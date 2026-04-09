@@ -13,6 +13,9 @@ import LogOut from "./Login/LogOut";
 import { CartProvider } from "react-use-cart";
 import { auth } from "./Firebase/Firebase";
 import ProductDetail from "./ProductDetail";
+import Product from "./Product";
+import Test from "./Test";
+import PaymentPage from "./PaymentPage";
 
 
 const App = () => {
@@ -20,15 +23,17 @@ const App = () => {
   const [login, setLogin] = useState("Login");
   useEffect(() => {
     auth.onAuthStateChanged((usrName) => {
-      if(usrName) {
+      if (usrName) {
         setUserName(usrName.displayName)
         setLogin("LogOut")
         // console.log("user name is ==", userName);
-      } else {setUserName("Please Login")
-       setLogin("LogIn")
-    }
+      } else {
+        setUserName("Please Login")
+        setLogin("LogIn")
+      }
     });
   }, []);
+
   return (
     <>
       <Router>
@@ -36,7 +41,8 @@ const App = () => {
           <Navbar Wlcm="Hey!" Usrname={userName} />
         </CartProvider>
         <Routes>
-          <Route exact path="/" element={<Home  btn2Name={login}/>} />
+
+          <Route exact path="/" element={<Home btn2Name={login} />} />
           <Route exact path="/products" element={<ProductsList />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/contact" element={<Contact />} />
@@ -47,6 +53,7 @@ const App = () => {
           <Route exact path="/productdetail/:id" element={<CartProvider><ProductDetail /></CartProvider>} />
           {/* by default home page is show */}
           <Route path="*" element={<Home />} />
+          <Route exact path="/pay" element={<PaymentPage/>} />
         </Routes>
         <Footer />
       </Router>

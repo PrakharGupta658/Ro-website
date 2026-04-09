@@ -37,7 +37,7 @@ const Navbar = (props) => {
                   id="navbarSupportedContent"
                 >
                   <h2 className="navbar-nav ms-auto mb-2 mb-lg-0 wlcmText">
-                    {props.Wlcm} {props.Usrname}
+                    {/* {props.Wlcm} {props.Usrname} */}
                   </h2>
 
                   <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
