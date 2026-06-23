@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const PaymentPage = () => {
 
   return (
-    <>Comming soon...</>
+    <>Comming soon......</>
   );
 };
 
